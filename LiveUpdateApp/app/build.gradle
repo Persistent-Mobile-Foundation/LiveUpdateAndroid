@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.liveupdateapp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.mfp.liveupdate"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+   // implementation project(path: ':ibmmobilefirstplatformfoundationliveupdate')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    implementation 'com.squareup.okio:okio:1.11.0'
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.1"
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+   // implementation 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundation:8.0.+'
+
+    //implementation 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationliveupdate:8.0.202003051505'
+
+}
